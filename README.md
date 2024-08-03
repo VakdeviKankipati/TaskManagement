@@ -1,4 +1,4 @@
-Task Management System
+# Task Management System
 This project is a Task Management System built with Spring Boot, implementing user authentication using JWT (JSON Web Token). The application allows users to register, log in, create tasks, and filter/search tasks.
 
 ## Features
@@ -10,44 +10,12 @@ This project is a Task Management System built with Spring Boot, implementing us
 - Task Management
   - Users can create tasks with details like title, description, status, priority, and due date.
   - Filtering and searching functionality for tasks based on status, priority, due date, title, or description.
-
-## Project Structure
-src/
-├── main/
-│   ├── java/
-│   │   └── com/
-│   │       └── vakya/
-│   │           └── taskmanagement/
-│   │               ├── controllers/
-│   │               │   └── UserController.java
-│   │               │   └── TaskController.java
-│   │               ├── filters/
-│   │               │   └── JwtRequestFilter.java
-│   │               ├── models/
-│   │               │   ├── User.java
-│   │               │   ├── Task.java
-│   │               ├── repositories/
-│   │               │   ├── UserRepository.java
-│   │               │   ├── TaskRepository.java
-|   |               ├──security.services/
-|   |               |   ├── UserDetailsServiceImpl.java
-│   │               ├── services/
-│   │               │   ├── UserService.java
-│   │               │   ├── UserServiceImpl.java
-│   │               │   ├── TaskService.java
-│   │               │   ├── TaskServiceImpl.java
-│   │               ├── utils/
-│   │               │   └── JwtUtil.java
-│   │               ├── TaskManagementApplication.java
-│   │               └── config/
-│   │                   └── SecurityConfig.java
-│   ├── resources/
-│   │   └── application.properties
-└── test/
-    └── java/
-        └── com/
-            └── vakya/
-                └── taskmanagement/
- └──docker-compose.yml
- └──Dockerfile
- └──pom.xml
+# Implementation
+- Created mvc patter structure in the form of Cobtrollers, Dtos, Models, Services.
+- Created UserController and TaskController in Controller package
+- Created Dtos and Repositories
+- Created UserService and TaskServices in Service package
+- Created Test Cases in the UserControllerTest and TaskControllerTest and implements Unti Test cases
+- Created DockerFile and docker-compose.yml files
+- Generated Pagenation and also tested.
+- Grenerated all dependencies
