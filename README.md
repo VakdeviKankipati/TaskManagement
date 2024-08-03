@@ -19,3 +19,4 @@ This project is a Task Management System built with Spring Boot, implementing us
 - Created DockerFile and docker-compose.yml files
 - Generated Pagenation and also tested.
 - Grenerated all dependencies
+- Implement filtering options for tasks based on status, priority, and due date.
