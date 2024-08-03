@@ -5,12 +5,15 @@ import com.vakya.taskmanagement.dtos.ResponseStatus;
 import com.vakya.taskmanagement.excception.TaskNotFoundException;
 import com.vakya.taskmanagement.models.Task;
 import com.vakya.taskmanagement.services.TaskService;
+import org.springframework.data.domain.Page;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -76,6 +79,21 @@ public class TaskController {
     public Task deleteProducts(@PathVariable("taskId") Long taskId) throws TaskNotFoundException {
         return taskService.deleteProducts(taskId);
     }
+
+    @GetMapping("/tasks/pagination")
+    public ResponseEntity<Page<Task>> getTaskss(@RequestBody GetTaskRequestDto requestDto)  {
+        /*Page<Task> tasksPage = taskService.getTaskss(
+
+                requestDto.getPage(),
+                requestDto.getSize()
+        );
+        return ResponseEntity.ok(tasksPage);*/
+        return ResponseEntity.of(Optional.ofNullable(taskService.getTaskss(
+                requestDto.getNumberOfResults() , requestDto.getOffset()
+        )));
+    }
+
+
 
 
 }

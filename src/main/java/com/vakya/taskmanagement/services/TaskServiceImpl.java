@@ -3,6 +3,10 @@ package com.vakya.taskmanagement.services;
 import com.vakya.taskmanagement.excception.TaskNotFoundException;
 import com.vakya.taskmanagement.models.Task;
 import com.vakya.taskmanagement.repositories.TaskRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -59,4 +63,13 @@ public class TaskServiceImpl implements TaskService{
         taskRepository.delete(task);
         return task;
     }
+    public Page<Task> getTaskss(int numberOfProducts, int offset) {
+        Page<Task> tasks = taskRepository.findAll(
+                PageRequest.of((offset/numberOfProducts), numberOfProducts)
+        );
+        return tasks;
+    }
+
+
+
 }

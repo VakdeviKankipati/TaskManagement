@@ -1,6 +1,8 @@
 package com.vakya.taskmanagement.repositories;
 
 import com.vakya.taskmanagement.models.Task;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -17,4 +19,5 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
             "(:search IS NULL OR t.title LIKE %:search% OR t.description LIKE %:search%)")
     List<Task> findByFilters(String status, String priority, Date dueDate, String search);
 
+    Page<Task> findAll(Pageable pageable);
 }

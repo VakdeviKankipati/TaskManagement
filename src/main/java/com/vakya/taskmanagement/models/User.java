@@ -14,5 +14,6 @@ public class User extends BaseModel{
     private String username;
     private String password;
     @OneToMany(mappedBy = "user")
-    private List<Task> tasks; // List of tasks assigned to the user
+    private List<Task> tasks;// List of tasks assigned to the user
+    private String role;
 }

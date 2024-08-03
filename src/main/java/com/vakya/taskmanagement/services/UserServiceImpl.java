@@ -2,7 +2,7 @@ package com.vakya.taskmanagement.services;
 
 import com.vakya.taskmanagement.models.User;
 import com.vakya.taskmanagement.repositories.UserRepository;
-import com.vakya.taskmanagement.security.JwtUtil;
+import com.vakya.taskmanagement.utils.JwtUtil;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
